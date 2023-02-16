@@ -2,13 +2,13 @@
 #include "drConfig.h"
 
 /* Sleep time between events value, per ms */
-#define _CFG_VALUE_STIME  "10000"
+const char* _CFG_VALUE_STIME = "10000";
 
 /* Count of trying value */
-#define _CFG_VALUE_COUNT  "3"
+const char* _CFG_VALUE_COUNT = "3";
 
 /* Count of trying value */
-#define _CFG_VALUE_NET    "1"
+const char* _CFG_VALUE_NET = "1";
 
 void drConfig::read_file(const char* aFile) {
     std::ifstream __File(aFile);

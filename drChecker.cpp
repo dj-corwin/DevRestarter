@@ -43,7 +43,7 @@ void drChecker::check(void) {
                 log->Msg(9, __log.assign(L"Status: ", 8).append(int2wcs(status, ts, tn)));
                 log->Msg(9, __log.assign(L"Problem: ", 9).append(int2wcs(problemNo, ts, tn)));
 
-                log->Msg(6, __log.assign(L"Trying to disable device... (", 29).append(int2wcs((int)counts[data->DevInst], ts, tn)).append(L")"));
+                log->Msg(6, __log.assign(L"Trying to disable device... (", 29).append(int2wcs(counts[data->DevInst], ts, tn)).append(L")"));
                 if (CM_Disable_DevNode(data->DevInst, 0) == CR_SUCCESS) {
                     log->Msg(8, L"Device disabled");
                     Sleep(1000);

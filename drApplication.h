@@ -3,7 +3,7 @@
 #include <Poco/Util/ServerApplication.h>
 #include "drServer.h"
 
-#define _SRV_LOG_FILES "logs\\dr_%Y.%m.%d.log"
+static const char* _SRV_LOG_FILES = "logs\\dr_%Y.%m.%d.log";
 
 class drApplication : public Poco::Util::ServerApplication {
 public:

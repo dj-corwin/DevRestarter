@@ -1,7 +1,7 @@
 #include "drServer.h"
 
-#define _SRV_VER_NO    L"0.1.0"            /* Server version number */
-#define _SRV_FULL_NAME L"Device Restarter" /* Server full name */
+const wchar_t* _SRV_VER_NO = L"0.1.0";               /* Server version number */
+const wchar_t* _SRV_FULL_NAME = L"Device Restarter"; /* Server full name */
 
 drServer::drServer(mLog* aLog) : Thread(), Runnable(), _cfg(_SRV_CFG_FILE) {
 	_running = false;

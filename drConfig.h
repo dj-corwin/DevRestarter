@@ -5,16 +5,16 @@
 #include "drLog.h"
 
 /* Config file name */
-#define _SRV_CFG_FILE     "dr.cfg"           
+static const char* _SRV_CFG_FILE = "dr.cfg";
 
 /* Count of trying */
-#define _CFG_NAME_COUNT   "count_of_trying"           
+static const char* _CFG_NAME_COUNT = "count_of_trying";
 
 /* What should be checked - all devices or net devices only */
-#define _CFG_NAME_NET     "net_only"           
+static const char* _CFG_NAME_NET = "net_only";
 
 /* Sleep time between events, per ms */
-#define _CFG_NAME_STIME   "sleep_time"
+static const char* _CFG_NAME_STIME = "sleep_time";
 
 class drConfig {
 private:
@@ -35,8 +35,8 @@ private:
     };
 
 public:
-    typedef std::map<std::string, _config_t>  _config_m;
-    typedef _config_m::const_iterator         _config_ci;
+    using _config_m = std::map<std::string, _config_t>;
+    using _config_ci = _config_m::const_iterator;
 
     drConfig(const char* aFile) { read_file(aFile); defaults(); }
     virtual ~drConfig(void) { _values.clear(); }
@@ -46,7 +46,7 @@ public:
     drConfig(const drConfig& O) : _values(O._values) { /* Do nothing */ }
 
 private:
-    typedef std::string::const_iterator __str_ci;
+    using __str_ci = std::string::const_iterator;
 
     _config_t _default;
     _config_m _values;
